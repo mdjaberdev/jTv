@@ -2,32 +2,35 @@
 import Link from "next/link";
 
 export default function MatchCard({ match }) {
-  if (!match) return null;
-
-  // Key selector alignment checking
-  const currentId = match.id || match.ID || match.matchId;
-  const isLive =
-    match.status?.toLowerCase() === "live" ||
-    match.type?.toLowerCase() === "live" ||
-    true;
-
   return (
-    <div className="bg-slate-800/90 rounded-xl p-6 border border-slate-700 text-center space-y-4 text-white shadow-xl">
-      <div className="text-xs uppercase font-bold tracking-widest text-red-500 flex items-center justify-center gap-1.5">
-        <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-        {match.status || "LIVE"}
+    <Link href={`/watch/${match.id}`}>
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer">
+        {/* Logo Section */}
+        <div className="h-40 flex items-center justify-center bg-slate-950">
+          <img
+            src={match.logo}
+            alt={match.title}
+            className="w-24 h-24 rounded-full object-cover border-4 border-slate-700"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="p-4">
+          <h2 className="font-bold text-lg truncate">{match.title}</h2>
+
+          <p className="text-slate-400 text-sm mt-1">
+            {match.group || "Live TV"}
+          </p>
+
+          <div className="mt-4 flex items-center justify-between">
+            <span className="px-3 py-1 bg-red-600 text-xs rounded-full">
+              LIVE
+            </span>
+
+            <span className="text-blue-400 text-sm">Watch →</span>
+          </div>
+        </div>
       </div>
-
-      <h3 className="text-xl font-bold tracking-wide">
-        {match.title || match.name}
-      </h3>
-
-      {/* 🚀 Dynamic parameter routing exact path hit korbe */}
-      <Link href={`/watch/${currentId}`}>
-        <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2.5 rounded-lg font-medium transition active:scale-95 shadow-md">
-          Watch Live
-        </button>
-      </Link>
-    </div>
+    </Link>
   );
 }

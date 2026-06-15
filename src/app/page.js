@@ -9,11 +9,12 @@ export default function HomePage() {
   return (
     <div className="space-y-8 text-white p-6 max-w-7xl mx-auto">
       <div className="border-b border-slate-800 pb-4">
-        <h1 className="text-3xl font-extrabold tracking-tight">
-          Live & Upcoming Matches
+        <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          📺 Live TV Channels
         </h1>
-        <p className="text-sm text-slate-400 mt-1">
-          Select a match to start streaming live sports.
+
+        <p className="text-slate-400 mt-2">
+          Watch live channels from around the world.
         </p>
       </div>
 
