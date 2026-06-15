@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function MatchCard({ match }) {
   return (
-    <Link href={`/watch/${match.id}`}>
+    <a href={`/watch/${match.id}`}>
       <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer">
         {/* Logo Section */}
-        <div className="h-40 flex items-center justify-center bg-slate-950">
+        <div className="h-40 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950">
           <img
             src={match.logo}
             alt={match.title}
-            className="w-24 h-24 rounded-full object-cover border-4 border-slate-700"
+            className="w-28 h-28 rounded-full object-cover shadow-2xl"
           />
         </div>
 
@@ -31,6 +31,6 @@ export default function MatchCard({ match }) {
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
