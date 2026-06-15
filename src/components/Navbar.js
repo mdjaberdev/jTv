@@ -10,7 +10,7 @@ export default function Navbar() {
           href="/"
           className="text-2xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400"
         >
-          🏆 SPORTS<span className="text-white">LIVE</span>
+          🏆 JABER<span className="text-white">SPORTS</span>
         </Link>
 
         {/* Navigation Links */}
