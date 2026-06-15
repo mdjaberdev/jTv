@@ -1,4 +1,5 @@
-// src/app/page.js
+
+
 import MatchCard from "@/components/MatchCard";
 import channel from "@/app/Channel.json"; // Safe absolute path alignment
 
